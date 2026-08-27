@@ -35,4 +35,5 @@ def extract_joke_data(api_data):
 def analyze_joke(joke):
     words=len(joke.split())
     characters=len(joke)
-    return words,characters
+    result={"joke":joke,"words":words,"characters":characters}
+    return result
