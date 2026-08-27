@@ -20,10 +20,11 @@ def run():
         data_joke=extract_joke_data(joke)
         langu=choose_language()
         translate=translate_joke(data_joke["joke"],langu)
-        display_result(data_joke["joke"],translate,*analyze_joke(data_joke["joke"]))
+        analyze=analyze_joke(data_joke["joke"])
+        display_result(data_joke["joke"],translate,analyze)
 
-def display_result(joke,translated_joke,words,chrac):
+def display_result(joke,translated_joke,analysis):
     print("SAFE PROGRAMMING JOKE\n=====================\n")
     print(f"Original:\n{joke}")
     print(f"Translation:\n[{translated_joke}]")
-    print(f"Information:\nCategory: Programming\nWords: {words}\nCharacters: {chrac}")
+    print(f"Information:\nCategory: Programming\nWords: {analysis["words"]}\nCharacters: {analysis["characters"]}")
